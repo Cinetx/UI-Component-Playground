@@ -1,0 +1,34 @@
+@use "../styles/mixins/breakpoints"as *;
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: map-get($wrapperWidth, 'L');
+
+  @include breakpoints('M') {
+    max-width: map-get($wrapperWidth, 'M');
+  }
+
+  @include breakpoints('S') {
+    max-width: map-get($wrapperWidth, 'S');
+  }
+}
+
+
+.main {
+  display: grid;
+  min-height: 100vh;
+  gap: 20px;
+  grid-template-columns: 20% 1fr;
+  padding: 24px;
+  position: relative;
+
+  @include breakpoints('M') {
+    grid-template-columns: 25% 1fr;
+  }
+
+  @include breakpoints('S') {
+    grid-template-columns: 1fr;
+  }
+}

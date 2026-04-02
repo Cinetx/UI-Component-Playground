@@ -1,0 +1,55 @@
+@use '../../styles/mixins/breakpoints'as *;
+
+.filtersMenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  padding: 20px;
+  border: 1px solid var(--color-zinc-200);
+  border-radius: 16px;
+  background: var(--color-slate-50);
+  box-shadow: var(--shadow-medium);
+
+  @include breakpoints('XS') {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include breakpoints('XS') {
+    width: 100%;
+  }
+}
+
+.label {
+  color: var(--color-zinc-900);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.searchInput {
+  height: 40px;
+  padding: 0 40px 0 12px;
+  border: 1px solid var(--color-zinc-200);
+  border-radius: 12px;
+  background: var(--color-white);
+  color: var(--color-zinc-900);
+  box-shadow: var(--shadow-soft);
+}
+
+.searchInput {
+  min-width: 260px;
+  padding-right: 12px;
+
+  @include breakpoints('XS') {
+    min-width: 100%;
+  }
+}

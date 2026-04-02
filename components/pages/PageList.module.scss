@@ -1,0 +1,37 @@
+.list {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.item {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-zinc-200);
+    cursor: pointer;
+    color: var(--color-black);
+}
+
+.itemActive {
+    border-color: var(--color-sky-1);
+    background-color: var(--color-sky-1);
+    color: var(--color-white);
+}
+
+.item:has(.button:disabled) {
+    background-color: var(--color-zinc-200);
+    color: var(--color-black);
+    border-color: var(--color-zinc-200);
+    opacity: 0.3;
+}
+
+
+.button {
+    border: none;
+    background-color: inherit;
+    padding: 5px 10px;
+    line-height: 100%;
+    cursor: pointer;
+
+    color: inherit;
+}

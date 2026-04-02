@@ -1,0 +1,29 @@
+@use "../../styles/mixins/breakpoints"as*;
+
+.cardList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.empty {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--color-zinc-200);
+  border-radius: 16px;
+  background: var(--color-slate-50);
+  color: var(--color-zinc-600);
+  text-align: center;
+}
+
+.cardList {
+  grid-template-columns: repeat(3, 1fr);
+
+  @include breakpoints('M') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints('XS') {
+    grid-template-columns: 1fr;
+  }
+}
