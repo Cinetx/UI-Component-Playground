@@ -1,7 +1,7 @@
 @use '../../styles/mixins/breakpoints'as *;
 
 .select {
-    @include breakpoints('XS') {
+    @include breakpoints('S') {
         width: 100%;
     }
 }
@@ -9,6 +9,7 @@
 .selectOpen {
 
 
+    z-index: 1;
     .selected {
         border-bottom: none;
         margin-bottom: 1px;
@@ -39,7 +40,7 @@
 
     border-radius: 12px;
 
-    @include breakpoints('XS') {
+    @include breakpoints('S') {
         width: 100%;
     }
 }
@@ -49,7 +50,7 @@
     border-radius: 12px;
     padding: 10px;
     cursor: pointer;
-
+min-height: 42px;
     overflow: hidden;
     background: var(--color-white);
     color: var(--color-zinc-900);
@@ -59,7 +60,7 @@
     align-items: center;
     position: relative;
 
-    @include breakpoints('XS') {
+    @include breakpoints('S') {
         width: 100%;
     }
 }

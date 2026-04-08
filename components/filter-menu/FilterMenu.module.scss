@@ -11,6 +11,11 @@
   background: var(--color-slate-50);
   box-shadow: var(--shadow-medium);
 
+  @include breakpoints('S') {
+    flex-direction: column;
+    align-items: flex-start;  
+  }
+
   @include breakpoints('XS') {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -24,7 +29,7 @@
   flex-direction: column;
   gap: 8px;
 
-  @include breakpoints('XS') {
+  @include breakpoints('S') {
     width: 100%;
   }
 }
@@ -51,5 +56,33 @@
 
   @include breakpoints('XS') {
     min-width: 100%;
+  }
+}
+
+.sortOrder {
+  border: 1px solid var(--color-sky-1);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 190px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 42px;
+  background-color: var(--color-white);
+  color: var(--color-sky-1);
+
+    svg {
+      transition: 0.3s;
+    }
+
+    @include breakpoints('S') {
+    width: 100%;
+    }
+}
+
+.sortOrderActive {
+  
+  svg {
+    transform: rotate(180deg);
   }
 }

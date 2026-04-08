@@ -1,17 +1,17 @@
 @use "../styles/mixins/breakpoints"as *;
-
+@use "sass:map";
 
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: map-get($wrapperWidth, 'L');
+  max-width: map.get($wrapperWidth, 'L');
 
   @include breakpoints('M') {
-    max-width: map-get($wrapperWidth, 'M');
+    max-width: map.get($wrapperWidth, 'M');
   }
 
   @include breakpoints('S') {
-    max-width: map-get($wrapperWidth, 'S');
+    max-width: map.get($wrapperWidth, 'S');
   }
 }
 

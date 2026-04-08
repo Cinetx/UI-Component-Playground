@@ -5,8 +5,8 @@ type SelectOption = {
 export type SelectProps = {
     currentValue: string;
     title: string;
-    defaultValue: string,
-    defaultLabel: string,
+    defaultValue?: string,
+    defaultLabel?: string,
     options: SelectOption[];
     handleChange: (value: string) => void;
 }

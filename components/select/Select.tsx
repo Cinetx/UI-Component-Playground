@@ -43,18 +43,19 @@ export default function Select({ currentValue, title, defaultValue, defaultLabel
                     </svg>
                 </button>
                 <ul className={styles.list}>
-                    <li className={styles.item}>
-                        <button
-                            onClick={() => onSelectClick(defaultValue)}
-                            className={(currentValue === defaultValue) ?
-                                (`${styles.button} ${styles.buttonDisable}`) :
-                                (styles.button)}
-                            value={defaultValue}
-                            disabled={(currentValue === defaultValue) ? (true) : (false)}>
-                            {defaultLabel}
-                        </button>
-                    </li>
-
+                    {defaultValue && defaultLabel && (
+                        <li className={styles.item}>
+                            <button
+                                onClick={() => onSelectClick(defaultValue)}
+                                className={(currentValue === defaultValue) ?
+                                    (`${styles.button} ${styles.buttonDisable}`) :
+                                    (styles.button)}
+                                value={defaultValue}
+                                disabled={(currentValue === defaultValue) ? (true) : (false)}>
+                                {defaultLabel}
+                            </button>
+                        </li>
+                    )}
                     {options.map((option) => (
                         <li className={styles.item} key={option.value}>
                             <button onClick={() => onSelectClick(option.value)}
