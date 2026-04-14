@@ -18,7 +18,7 @@ export default function Card({ title, description, price, type, date }: CardItem
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
 
-            <div className={styles.price}>${price}</div>
+            <div className={styles.price}>{price} &#8381;</div>
         </div>
     )
 }
