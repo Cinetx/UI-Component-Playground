@@ -1,113 +1,125 @@
-@use '../../styles/mixins/breakpoints'as *;
+@use "../../styles/mixins/breakpoints"as *;
 
 .select {
-    @include breakpoints('S') {
-        width: 100%;
-    }
+  @include breakpoints("S") {
+    width: 100%;
+  }
 }
 
 .selectOpen {
+  z-index: 1;
+  .selected {
+    
 
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+  }
 
-    z-index: 1;
-    .selected {
-        border-bottom: none;
-        margin-bottom: 1px;
-        border-radius: 12px 12px 0 0;
-    }
+  .list {
+    display: block;
+  }
 
-    .list {
-        display: block;
-    }
-
-    .icon {
-        transform: rotate(180deg);
-    }
-
-    .wrapper {}
+  .icon {
+    transform: rotate(180deg);
+  }
 }
 
 .title {
-    color: var(--color-zinc-900);
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-zinc-900);
 }
 
 .wrapper {
-    position: relative;
+  position: relative;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    @include breakpoints('S') {
-        width: 100%;
-    }
+  @include breakpoints("S") {
+    width: 100%;
+  }
 }
 
 .selected {
-    border: 1px solid var(--color-zinc-200);
-    border-radius: 12px;
-    padding: 10px;
-    cursor: pointer;
-min-height: 42px;
-    overflow: hidden;
-    background: var(--color-white);
-    color: var(--color-zinc-900);
-    box-shadow: var(--shadow-soft);
-    min-width: 190px;
-    display: flex;
-    align-items: center;
-    position: relative;
+  position: relative;
 
-    @include breakpoints('S') {
-        width: 100%;
-    }
+  display: flex;
+  align-items: center;
+  min-width: 190px;
+  min-height: 42px;
+  padding: 10px;
+  overflow: hidden;
+
+  color: var(--color-zinc-900);
+
+  background: var(--color-white);
+  border: 1px solid var(--color-zinc-200);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  
+
+  
+
+  @include breakpoints("S") {
+    width: 100%;
+  }
 }
 
 .icon {
-    pointer-events: none;
-    position: absolute;
-    right: 8px;
-    bottom: 6px;
-    width: 28px;
-    height: 28px;
-    color: var(--color-zinc-600);
-    transition: 0.3s;
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--color-zinc-600);
+
+  transition: 0.3s;
+
+  pointer-events: none;
 }
 
 
 .list {
-    position: absolute;
-    width: 100%;
-    border: 1px solid var(--color-zinc-200);
-    display: none;
-    overflow: hidden;
-    border-top: none;
-    margin-top: -1px;
-    border-radius: 0 0 12px 12px;
-    box-shadow: var(--shadow-soft);
+  position: absolute;
+
+  display: none;
+  width: 100%;
+  margin-top: -1px;
+  overflow: hidden;
+
+  border: 1px solid var(--color-zinc-200);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: var(--shadow-soft);
 }
 
-.item {}
+
 
 .button {
+  width: 100%;
+  padding: 10px;
 
-    transition: 0.2s;
-    width: 100%;
-    background-color: var(--color-white);
-    text-align: start;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+  text-align: start;
+
+  background-color: var(--color-white);
+  border: none;
+  cursor: pointer;
+
+  transition: 0.2s;
 }
 
 .buttonDisable {
-    background-color: var(--color-zinc-200);
-    box-shadow: 0px 0px 8px 1px rgba(34, 60, 80, 0.2) inset;
+  background-color: var(--color-zinc-200);
+  box-shadow: 0 0 8px 1px rgba(34, 60, 80, 0.2) inset;
 }
 
 .button:not(.buttonDisable):hover {
-    color: var(--color-white);
-    background-color: var(--color-sky-1);
+  color: var(--color-white);
+
+  background-color: var(--color-sky-1);
 }
