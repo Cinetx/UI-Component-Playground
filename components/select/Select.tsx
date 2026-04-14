@@ -1,6 +1,7 @@
 import type { SelectProps } from "@/types/select"
 import styles from './select.module.scss'
 import { useEffect, useRef, useState } from "react"
+import SelectItem from "./SelectItem";
 export default function Select({ currentValue, title, defaultValue, defaultLabel, options, handleChange }: SelectProps) {
     const selectedOption = options.find((option) => option.value === currentValue)
     const [menuOpen, setMenuOpen] = useState(false);
@@ -44,30 +45,10 @@ export default function Select({ currentValue, title, defaultValue, defaultLabel
                 </button>
                 <ul className={styles.list}>
                     {defaultValue && defaultLabel && (
-                        <li className={styles.item}>
-                            <button
-                                onClick={() => onSelectClick(defaultValue)}
-                                className={(currentValue === defaultValue) ?
-                                    (`${styles.button} ${styles.buttonDisable}`) :
-                                    (styles.button)}
-                                value={defaultValue}
-                                disabled={(currentValue === defaultValue) ? (true) : (false)}>
-                                {defaultLabel}
-                            </button>
-                        </li>
+                        <SelectItem value={defaultValue} label={defaultLabel} currentValue={currentValue} onSelect={onSelectClick} />
                     )}
                     {options.map((option) => (
-                        <li className={styles.item} key={option.value}>
-                            <button onClick={() => onSelectClick(option.value)}
-                                className={(currentValue === option.value) ?
-                                    (`${styles.button} ${styles.buttonDisable}`) :
-                                    (styles.button)}
-                                value={option.value}
-                                disabled={(currentValue === option.value) ? (true) : (false)}
-                            >
-                                {option.label}
-                            </button>
-                        </li>
+                        <SelectItem key={option.value} value={option.value} label={option.label} currentValue={currentValue} onSelect={onSelectClick} />
                     ))}
                 </ul>
             </div>

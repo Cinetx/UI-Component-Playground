@@ -10,3 +10,10 @@ export type SelectProps = {
     options: SelectOption[];
     handleChange: (value: string) => void;
 }
+
+export type SelectItemProps = {
+    value: string;
+    label: string;
+    currentValue: string;
+    onSelect: (value: string) => void;
+}

@@ -1,52 +1,53 @@
-@use '../../styles/mixins/breakpoints'as *;
+@use "../../styles/mixins/breakpoints"as *;
 
 .filtersMenu {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
   align-items: flex-end;
   padding: 20px;
+
+  background: var(--color-slate-50);
   border: 1px solid var(--color-zinc-200);
   border-radius: 16px;
-  background: var(--color-slate-50);
   box-shadow: var(--shadow-medium);
 
-  @include breakpoints('S') {
+  gap: 16px;
+  @include breakpoints("S") {
     flex-direction: column;
-    align-items: flex-start;  
+    align-items: flex-start;
   }
-
-  @include breakpoints('XS') {
+  @include breakpoints("XS") {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
-
   }
 }
 
 .search {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 
-  @include breakpoints('S') {
+  gap: 8px;
+  @include breakpoints("S") {
     width: 100%;
   }
 }
 
 .label {
-  color: var(--color-zinc-900);
-  font-size: 14px;
   font-weight: 600;
+  font-size: 14px;
+  color: var(--color-zinc-900);
 }
 
 .searchInput {
   height: 40px;
   padding: 0 40px 0 12px;
+
+  color: var(--color-zinc-900);
+
+  background: var(--color-white);
   border: 1px solid var(--color-zinc-200);
   border-radius: 12px;
-  background: var(--color-white);
-  color: var(--color-zinc-900);
   box-shadow: var(--shadow-soft);
 }
 
@@ -54,34 +55,35 @@
   min-width: 260px;
   padding-right: 12px;
 
-  @include breakpoints('XS') {
+  @include breakpoints("XS") {
     min-width: 100%;
   }
 }
 
 .sortOrder {
-  border: 1px solid var(--color-sky-1);
-  border-radius: 12px;
-  padding: 10px;
-  min-width: 190px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  min-width: 190px;
   min-height: 42px;
-  background-color: var(--color-white);
+  padding: 10px;
+
   color: var(--color-sky-1);
 
-    svg {
-      transition: 0.3s;
-    }
+  background-color: var(--color-white);
+  border: 1px solid var(--color-sky-1);
+  border-radius: 12px;
+  cursor: pointer;
 
-    @include breakpoints('S') {
+  gap: 5px;
+  @include breakpoints("S") {
     width: 100%;
-    }
+  }
+  svg {
+    transition: 0.3s;
+  }
 }
 
 .sortOrderActive {
-  
   svg {
     transform: rotate(180deg);
   }
